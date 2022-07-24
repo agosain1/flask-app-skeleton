@@ -1,4 +1,5 @@
-from flask import Blueprint, make_response, jsonify, request
+from flask import Blueprint, make_response, jsonify
+from flask import current_app as app
 
 import logging
 
@@ -13,6 +14,8 @@ def before_anything():
 
 @bp.route('/helloworld', methods=['GET', 'POST'])
 def helloworld():
+    #Access app config
+    print(str(app.config["SOME_PARAMETER"]))
     logging.info('GET /module2/helloworld')
     return make_response(
         jsonify({'message': 'HelloWorld from module1'}),

@@ -25,14 +25,17 @@ def create_app(app_config=None):
         app.config.from_mapping(app_config)
         #app.config.from_object(app_config)
 
+    #example of an app config parameter
+    app.config.from_mapping(SOME_PARAMETER="SOME_VALUE")
     # ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
     except OSError:
         pass
 
-    #print("2. done with config {}".format(app.config))
-    logging.basicConfig(level=logging.DEBUG)
+
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(levelname)1.1s %(asctime)s [%(filename)s:%(lineno)d] %(message)s')
     # apply the blueprints to the app
     #Calling Api.init_app() is not required here because registering the blueprint with the app takes care of setting up the routing for the application.
     #api.add_resource(TodoItem, '/todos/<int:id>')
