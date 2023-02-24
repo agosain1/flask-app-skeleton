@@ -32,6 +32,6 @@ The second argument is very important it’s the import_name. This name has to b
 
 The third argument is the url prefix of the blueprint. With this we were able to remove the redundancy of prefixing all our api urls with /api.
 
-## Put the config settings in instance/app_settings.py and make sure .gitignore has instance/
+## Put the config settings in instance/app_settings.py and make sure .gitignore has instance/ Also names must be UPPERCASE
 
 ## Ubuntu: sudo apt-get install psycopg2 libpq-dev python-dev

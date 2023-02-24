@@ -18,9 +18,7 @@ def create_app(app_config=None):
     if app_config is None:
         # load the instance config, if it exists, when not testing
         print(app.config.from_pyfile('app_settings.py', silent=True))
-        # app.config.from_mapping({"SQLALCHEMY_DATABASE_URI":"postgresql://cvxuigev:XCl4qDdjdgDmNoIpnomDsltOTegVyKSu@host=ruby.db.elephantsql.com:5432/cvxuigev",
-        #                          "SQLALCHEMY_TRACK_MODIFICATIONS":False})
-        #app.config.from_object('app_settings.ProductionConfig')
+
     else:
         app.config.from_mapping(app_config)
         #app.config.from_object(app_config)
